@@ -1088,10 +1088,26 @@
             return `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1&title=0&byline=0&portrait=0&playsinline=1`;
         }
 
-        if (/^https?:\/\/vkvideo\.ru/i.test(normalized)) {
-            normalized = normalized.replace(/^https?:\/\/vkvideo\.ru/i, 'https://m.vk.com');
-        } else if (/^https?:\/\/vk\.com/i.test(normalized)) {
-            normalized = normalized.replace(/^https?:\/\/vk\.com/i, 'https://m.vk.com');
+        const vkVideoMatch = normalized.match(/vkvideo\.ru\/(video|clip)-?(\d+)_(\d+)/i);
+        const vkClipMatch = normalized.match(/(?:vk\.com|m\.vk\.com)\/clip-?(\d+)_(\d+)/i);
+        const vkVideoPageMatch = normalized.match(/(?:vk\.com|m\.vk\.com)\/video(-?\d+)_(\d+)/i);
+        const vkEmbedMatch = normalized.match(/video_ext\.php\?([^#]+)/i);
+
+        if (vkEmbedMatch) {
+            normalized = `https://vk.com/video_ext.php?${vkEmbedMatch[1]}`;
+        } else if (vkVideoMatch) {
+            const type = vkVideoMatch[1].toLowerCase();
+            const owner = type === 'video' ? `-${vkVideoMatch[2]}` : vkVideoMatch[2];
+            const id = vkVideoMatch[3];
+            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
+        } else if (vkClipMatch) {
+            const owner = vkClipMatch[1];
+            const id = vkClipMatch[2];
+            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
+        } else if (vkVideoPageMatch) {
+            const owner = vkVideoPageMatch[1];
+            const id = vkVideoPageMatch[2];
+            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
         }
 
         return normalized + (normalized.includes('?') ? '&autoplay=1' : '?autoplay=1');
@@ -1106,9 +1122,9 @@
         const note = document.getElementById('modal_note');
         
         if (c.type === 'vid') {
-            media.innerHTML = `<iframe src="${getIframeSrc(c.v)}" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; encrypted-media; fullscreen; picture-in-picture" playsinline></iframe>`;
+            media.innerHTML = `<iframe src="${getIframeSrc(c.v)}" width="100%" height="100%" style="display:block; border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; encrypted-media; fullscreen; picture-in-picture" playsinline></iframe>`;
         } else if (c.type === 'site') {
-            media.innerHTML = `<iframe src="${c.l}" allowfullscreen webkitallowfullscreen mozallowfullscreen playsinline></iframe>`;
+            media.innerHTML = `<iframe src="${c.l}" width="100%" height="100%" style="display:block; border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen playsinline></iframe>`;
         } else {
             media.innerHTML = `<img src="${c.i}">`;
         }
