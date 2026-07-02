@@ -9,7 +9,7 @@
         }
         * { box-sizing: border-box; outline: none; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         body, html { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: var(--bg); color: var(--dark); overflow: auto; -webkit-touch-callout: none; }
-        button, .nav-link, .filter-item, .case-tile, .collab-item, .fab-main, .fab-item, .nav-arrow, .drop-list a { pointer-events: auto; touch-action: manipulation; -webkit-tap-highlight-color: transparent; tap-highlight-color: transparent; }
+        button, .nav-link, .filter-item, .case-tile, .collab-item, .fab-main, .fab-item, .nav-arrow, .drop-list a { pointer-events: auto; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
         .nav-link span, .fab-item span, .case-preview, .case-preview img, .case-details, .type-icon { pointer-events: none; }
         .drop-list a { display: block; cursor: pointer; }
 
@@ -83,6 +83,8 @@
         .modal-container { width: 85%; max-width: 1100px; height: 85vh; position: relative; display: flex; align-items: center; justify-content: center; z-index: 5; }
         .media-box { width: 100%; height: 100%; border-radius: 25px; overflow: hidden; background: #000; position: relative; z-index: 10; }
         .media-box iframe, .media-box img { width: 100%; height: 100%; border: none; object-fit: contain; }
+        .media-box .vk-fallback { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 20; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(0,0,0,0.75); border-radius: 16px; color: #fff; font-size: 14px; text-decoration: none; }
+        .media-box .vk-fallback:hover { background: rgba(0,0,0,0.9); }
         
         .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; cursor: pointer; z-index: 20; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); transition: 0.2s; touch-action: manipulation; -webkit-user-select: none; user-select: none; }
         .nav-arrow:hover { background: rgba(255,255,255,0.3); }
@@ -1079,6 +1081,10 @@
         }
     }
 
+    function isVKSource(src) {
+        return /(?:vkvideo\.ru|vk\.com|m\.vk\.com)/i.test(src);
+    }
+
     function getIframeSrc(src) {
         if (!src) return '';
         let normalized = src.trim();
@@ -1094,20 +1100,20 @@
         const vkEmbedMatch = normalized.match(/video_ext\.php\?([^#]+)/i);
 
         if (vkEmbedMatch) {
-            normalized = `https://vk.com/video_ext.php?${vkEmbedMatch[1]}`;
+            normalized = `https://m.vk.com/video_ext.php?${vkEmbedMatch[1]}`;
         } else if (vkVideoMatch) {
             const type = vkVideoMatch[1].toLowerCase();
             const owner = type === 'video' ? `-${vkVideoMatch[2]}` : vkVideoMatch[2];
             const id = vkVideoMatch[3];
-            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
+            normalized = `https://m.vk.com/video_ext.php?oid=${owner}&id=${id}`;
         } else if (vkClipMatch) {
             const owner = vkClipMatch[1];
             const id = vkClipMatch[2];
-            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
+            normalized = `https://m.vk.com/video_ext.php?oid=${owner}&id=${id}`;
         } else if (vkVideoPageMatch) {
             const owner = vkVideoPageMatch[1];
             const id = vkVideoPageMatch[2];
-            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
+            normalized = `https://m.vk.com/video_ext.php?oid=${owner}&id=${id}`;
         }
 
         return normalized + (normalized.includes('?') ? '&autoplay=1' : '?autoplay=1');
@@ -1122,7 +1128,14 @@
         const note = document.getElementById('modal_note');
         
         if (c.type === 'vid') {
-            media.innerHTML = `<iframe src="${getIframeSrc(c.v)}" width="100%" height="100%" style="display:block; border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; encrypted-media; fullscreen; picture-in-picture" playsinline></iframe>`;
+            const iframeSrc = getIframeSrc(c.v);
+            const isVK = isVKSource(c.v);
+            const fallbackLink = isVK ? `<a class="vk-fallback" href="${c.v}" target="_blank" rel="noreferrer noopener">Открыть в VK</a>` : '';
+            const hintText = isVK ? '<div class="vk-fallback" style="position:absolute;left:50%;bottom:18px;transform:translateX(-50%);padding:10px 16px;background:rgba(0,0,0,0.75);border-radius:16px;color:#fff;font-size:14px;z-index:25;">Если видео не воспроизводится, откройте его в VK</div>' : '';
+            media.innerHTML = `<div style="position:relative;width:100%;height:100%;">` +
+                `<iframe src="${iframeSrc}" width="100%" height="100%" style="display:block; border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; encrypted-media; fullscreen; picture-in-picture" playsinline></iframe>` +
+                hintText +
+                `</div>` + fallbackLink;
         } else if (c.type === 'site') {
             media.innerHTML = `<iframe src="${c.l}" width="100%" height="100%" style="display:block; border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen playsinline></iframe>`;
         } else {
