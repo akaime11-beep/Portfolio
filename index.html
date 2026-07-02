@@ -1079,6 +1079,24 @@
         }
     }
 
+    function getIframeSrc(src) {
+        if (!src) return '';
+        let normalized = src.trim();
+
+        const vimeoMatch = normalized.match(/vimeo\.com\/(\d+)/i);
+        if (vimeoMatch) {
+            return `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1&title=0&byline=0&portrait=0&playsinline=1`;
+        }
+
+        if (/^https?:\/\/vkvideo\.ru/i.test(normalized)) {
+            normalized = normalized.replace(/^https?:\/\/vkvideo\.ru/i, 'https://m.vk.com');
+        } else if (/^https?:\/\/vk\.com/i.test(normalized)) {
+            normalized = normalized.replace(/^https?:\/\/vk\.com/i, 'https://m.vk.com');
+        }
+
+        return normalized + (normalized.includes('?') ? '&autoplay=1' : '?autoplay=1');
+    }
+
     function openCard(realIdx) {
         const list = (siteData.cards[activeTab] || []).filter(c => activeFilter === 'Все' || c.cat === activeFilter);
         const c = siteData.cards[activeTab][realIdx];
@@ -1087,9 +1105,13 @@
         const media = document.getElementById('modal_media');
         const note = document.getElementById('modal_note');
         
-        if (c.type === 'vid') media.innerHTML = `<iframe src="${c.v}?autoplay=1" allowfullscreen></iframe>`;
-        else if (c.type === 'site') media.innerHTML = `<iframe src="${c.l}"></iframe>`;
-        else media.innerHTML = `<img src="${c.i}">`;
+        if (c.type === 'vid') {
+            media.innerHTML = `<iframe src="${getIframeSrc(c.v)}" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay; encrypted-media; fullscreen; picture-in-picture" playsinline></iframe>`;
+        } else if (c.type === 'site') {
+            media.innerHTML = `<iframe src="${c.l}" allowfullscreen webkitallowfullscreen mozallowfullscreen playsinline></iframe>`;
+        } else {
+            media.innerHTML = `<img src="${c.i}">`;
+        }
 
         if (c.n && c.n.trim() !== '') { 
             note.innerHTML = c.n; 
