@@ -1094,26 +1094,26 @@
             return `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1&title=0&byline=0&portrait=0&playsinline=1`;
         }
 
+        const vkEmbedMatch = normalized.match(/(?:m\.)?vk\.com\/video_ext\.php\?([^#]+)/i);
         const vkVideoMatch = normalized.match(/vkvideo\.ru\/(video|clip)-?(\d+)_(\d+)/i);
         const vkClipMatch = normalized.match(/(?:vk\.com|m\.vk\.com)\/clip-?(\d+)_(\d+)/i);
         const vkVideoPageMatch = normalized.match(/(?:vk\.com|m\.vk\.com)\/video(-?\d+)_(\d+)/i);
-        const vkEmbedMatch = normalized.match(/video_ext\.php\?([^#]+)/i);
 
         if (vkEmbedMatch) {
-            normalized = `https://m.vk.com/video_ext.php?${vkEmbedMatch[1]}`;
+            normalized = `https://vk.com/video_ext.php?${vkEmbedMatch[1]}`;
         } else if (vkVideoMatch) {
             const type = vkVideoMatch[1].toLowerCase();
             const owner = type === 'video' ? `-${vkVideoMatch[2]}` : vkVideoMatch[2];
             const id = vkVideoMatch[3];
-            normalized = `https://m.vk.com/video_ext.php?oid=${owner}&id=${id}`;
+            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
         } else if (vkClipMatch) {
             const owner = vkClipMatch[1];
             const id = vkClipMatch[2];
-            normalized = `https://m.vk.com/video_ext.php?oid=${owner}&id=${id}`;
+            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
         } else if (vkVideoPageMatch) {
             const owner = vkVideoPageMatch[1];
             const id = vkVideoPageMatch[2];
-            normalized = `https://m.vk.com/video_ext.php?oid=${owner}&id=${id}`;
+            normalized = `https://vk.com/video_ext.php?oid=${owner}&id=${id}`;
         }
 
         return normalized + (normalized.includes('?') ? '&autoplay=1' : '?autoplay=1');
