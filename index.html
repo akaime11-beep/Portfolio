@@ -247,7 +247,27 @@
                 <span class="logo-main" id="name_box" contenteditable="false">Владимир<br>Капрал</span>
                 <span class="portfolio-tag">Портфолио</span>
             </div>
-            <nav class="nav-list" id="nav_box"></nav>
+            <nav class="nav-list" id="nav_box">
+            <div class="nav-link " onclick="loadTab('about')">
+                <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='about').t=this.innerText">Обо мне</span>
+            </div>
+        
+            <div class="nav-link " onclick="loadTab('smm')">
+                <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='smm').t=this.innerText">SMM &amp; Ведение</span>
+            </div>
+        
+            <div class="nav-link active" onclick="loadTab('video')">
+                <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='video').t=this.innerText">Контент-мейкинг</span>
+            </div>
+        
+            <div class="nav-link " onclick="loadTab('web')">
+                <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='web').t=this.innerText">Web &amp; Сайты</span>
+            </div>
+        
+            <div class="nav-link " onclick="loadTab('design')">
+                <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='design').t=this.innerText">Кейсы дизайна</span>
+            </div>
+        </nav>
             <button class="admin-only" onclick="addTab()" style="margin-top:10px; border:1px dashed #ccc; background:none; padding:10px; cursor:pointer; border-radius:10px;">+ Раздел</button>
             <div class="sidebar-bottom">
                 <div class="comment-box"><div class="section-comment" id="desc_box">От свежих идей до готового видео: придумываю, снимаю и монтирую ваш контент</div></div>
@@ -261,6 +281,8 @@
                 <div class="filter-item " onclick="setFilter('Reels')">Reels</div>
             
                 <div class="filter-item " onclick="setFilter('Горизонтальные')">Горизонтальные</div>
+            
+                <div class="filter-item " onclick="setFilter('Свадьбы')">Свадьбы</div>
             </div>
             <div id="main_view" class="scroll-box"><div class="case-grid">
                 
@@ -316,9 +338,9 @@
                         <div class="type-icon">VIDEO</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-66.userapi.com/s/v1/ig2/tRevWZD8QCtMrVtjv0DyA6XFbPZiscd2LidPpbfAQDAmQnTadVA2oqo6ishTSxMWaxOHnQ_bl7SmIhYQMA_wGUNm.jpg?quality=95&amp;as=32x57,48x86,72x128,108x192,160x285,240x428,317x565&amp;from=bu&amp;u=QmroAUeIzUWvYWPsYr7rkHf0ad6oIEu3Peu2Mcw6OnU&amp;cs=317x0">
+    <img src="https://sun9-5.userapi.com/s/v1/ig2/NFi8Jx0FgrmxiYb-kKz347CwPxuP_DcU0F2w4zGnU2NYwh8TCAvYSjHjqSJ3kLa58R4R_YmPOigZvhkNo-wqFZrk.jpg?quality=95&amp;as=32x44,48x66,72x100,108x150,160x222,240x332,360x499,431x597&amp;from=bu&amp;u=fpegA7UQHB5uUPrQ1Q3lXds_1HgIl7iEa8uSULEXU28&amp;cs=431x0">
 </div>
-                        <div class="case-details">Питбайк - 3 правила </div>
+                        <div class="case-details">Ролик для таргета (Авто тематика) </div>
                     </div>
                     <div class="case-tile" onclick="openCard(7)">
                         <div class="type-icon">VIDEO</div>
@@ -376,6 +398,30 @@
 </div>
                         <div class="case-details">Видео Афиша Стаф пати (VPN)</div>
                     </div>
+                    <div class="case-tile" onclick="openCard(14)">
+                        <div class="type-icon">VIDEO</div>
+                        
+                        <div class="case-preview">
+    <img src="https://sun9-27.vkuserphoto.ru/s/v1/ig2/2us6Q8Dkfci0VoeW-EzvQw-GF6ydJl2oG6wUNCFsTHlKZITU1HZaqB944nmzWl0HIIAFmw69sGJZhYr70Dwz5oDZ.jpg?quality=95&amp;as=32x53,48x79,72x119,108x179,160x265,240x397,360x596,431x713&amp;from=bu&amp;u=kXdjkezYRr3Unozi1UN88U8FApvhSvH2yarETAkYJbQ&amp;cs=431x0">
+</div>
+                        <div class="case-details">Трендовое Свадебное Видео на 300 тысяч просмотров</div>
+                    </div>
+                    <div class="case-tile" onclick="openCard(15)">
+                        <div class="type-icon">VIDEO</div>
+                        
+                        <div class="case-preview">
+    <img src="https://sun9-86.vkuserphoto.ru/s/v1/ig2/yt0iNFahqTrW6WAueulsuRCIuY2rbLjjd7c2WHATadTuNNcBT4LncwOvXafX1vBnqK7wIX2Tp64H7WNgSkXCM-Jf.jpg?quality=95&amp;as=32x16,48x24,72x36,108x54,160x80,240x120,360x180,480x239,540x269,640x319,720x359,1080x539,1280x639,1351x674&amp;from=bu&amp;u=6RuCxlspflA9_W-CF88nEYT8hw6hoSOoCFe4ZVgTNSc&amp;cs=1280x0">
+</div>
+                        <div class="case-details">Горизонтальные Свадебное видео для ведущей </div>
+                    </div>
+                    <div class="case-tile" onclick="openCard(16)">
+                        <div class="type-icon">VIDEO</div>
+                        
+                        <div class="case-preview">
+    <img src="https://sun9-46.vkuserphoto.ru/s/v1/ig2/M3bRAOg1ycHUoq7GHgYiuNMqIRiESJv94cRj17Qn4Wi_WCwTIe2Rdlw9NGUN9CR0Zmea8RGmeOTIA3_OJEHycDxg.jpg?quality=95&amp;as=32x17,48x25,72x38,108x57,160x84,240x126,360x190,480x253,540x284,640x337,720x379,1080x569,1280x674,1359x716&amp;from=bu&amp;u=VZ79kPEfjBAXRR3HMsXFiffKZYWKmN2007sFvzxJin8&amp;cs=1280x0">
+</div>
+                        <div class="case-details">Горизонтальное видео свадебное Превью</div>
+                    </div>
                 
             </div></div>
         </main>
@@ -406,7 +452,7 @@
         <div class="nav-arrow arrow-prev" onclick="changeSlide(-1)">❮</div>
         <div class="nav-arrow arrow-next" onclick="changeSlide(1)">❯</div>
         <div class="media-box" id="modal_media"></div>
-        <div class="note-cloud" id="modal_note" style="display: none;">Сьемка/Монтаж видео</div>
+        <div class="note-cloud" id="modal_note" style="display: block;">Видео было сделано на заказ для ведущей, видео набрало 300 тысяч просмотров в ВК клипах</div>
     </div>
 </div>
 
@@ -442,7 +488,8 @@
             "filters": [
                 "Все",
                 "Reels",
-                "Горизонтальные"
+                "Горизонтальные",
+                "Свадьбы"
             ]
         },
         {
@@ -651,6 +698,30 @@
                 "n": "",
                 "v": "https://vimeo.com/1009485368",
                 "p": "https://sun9-56.userapi.com/s/v1/ig2/KPJD4qUOmzF8igRwTnEM0Ms_3YZRfRjuxUpFo8XadzGAjhF-4OWqQ5ZvY-r3JXvtLUHo_cOr6dS8feK6tyE7cixP.jpg?quality=95&as=32x53,48x79,72x119,108x179,160x265,240x397,360x596,426x705&from=bu&u=b9B3j0_xCHAGuDJGS3dEz7rgRwmsK8Ggn4rSHM5BQKI&cs=426x0"
+            },
+            {
+                "t": "Трендовое Свадебное Видео на 300 тысяч просмотров",
+                "type": "vid",
+                "cat": "Свадьбы",
+                "n": "Видео было сделано на заказ для ведущей, видео набрало 300 тысяч просмотров в ВК клипах",
+                "v": "https://vk.com/clip15261791_456239747",
+                "p": "https://sun9-27.vkuserphoto.ru/s/v1/ig2/2us6Q8Dkfci0VoeW-EzvQw-GF6ydJl2oG6wUNCFsTHlKZITU1HZaqB944nmzWl0HIIAFmw69sGJZhYr70Dwz5oDZ.jpg?quality=95&as=32x53,48x79,72x119,108x179,160x265,240x397,360x596,431x713&from=bu&u=kXdjkezYRr3Unozi1UN88U8FApvhSvH2yarETAkYJbQ&cs=431x0"
+            },
+            {
+                "t": "Горизонтальные Свадебное видео для ведущей ",
+                "type": "vid",
+                "cat": "Свадьбы",
+                "n": "Видео было сделано под заказ для Ведущей ",
+                "v": "https://vkvideo.ru/video-240690370_456239018",
+                "p": "https://sun9-86.vkuserphoto.ru/s/v1/ig2/yt0iNFahqTrW6WAueulsuRCIuY2rbLjjd7c2WHATadTuNNcBT4LncwOvXafX1vBnqK7wIX2Tp64H7WNgSkXCM-Jf.jpg?quality=95&as=32x16,48x24,72x36,108x54,160x80,240x120,360x180,480x239,540x269,640x319,720x359,1080x539,1280x639,1351x674&from=bu&u=6RuCxlspflA9_W-CF88nEYT8hw6hoSOoCFe4ZVgTNSc&cs=1280x0"
+            },
+            {
+                "t": "Горизонтальное видео свадебное Превью",
+                "type": "vid",
+                "cat": "Свадьбы",
+                "n": "Минута, в которой собрано самое важное: искренность, мурашки и живая память.",
+                "v": "https://vkvideo.ru/video-240690370_456239017",
+                "p": "https://sun9-46.vkuserphoto.ru/s/v1/ig2/M3bRAOg1ycHUoq7GHgYiuNMqIRiESJv94cRj17Qn4Wi_WCwTIe2Rdlw9NGUN9CR0Zmea8RGmeOTIA3_OJEHycDxg.jpg?quality=95&as=32x17,48x25,72x38,108x57,160x84,240x126,360x190,480x253,540x284,640x337,720x379,1080x569,1280x674,1359x716&from=bu&u=VZ79kPEfjBAXRR3HMsXFiffKZYWKmN2007sFvzxJin8&cs=1280x0"
             }
         ],
         "web": [
@@ -1226,4 +1297,5 @@
 
     init();
 </script>
+
 </body></html>
