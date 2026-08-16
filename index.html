@@ -256,7 +256,7 @@
                 <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='smm').t=this.innerText">SMM &amp; Ведение</span>
             </div>
         
-            <div class="nav-link active" onclick="loadTab('video')">
+            <div class="nav-link " onclick="loadTab('video')">
                 <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='video').t=this.innerText">Контент-мейкинг</span>
             </div>
         
@@ -264,13 +264,13 @@
                 <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='web').t=this.innerText">Web &amp; Сайты</span>
             </div>
         
-            <div class="nav-link " onclick="loadTab('design')">
+            <div class="nav-link active" onclick="loadTab('design')">
                 <span contenteditable="false" oninput="event.stopPropagation(); siteData.tabs.find(x=&gt;x.id==='design').t=this.innerText">Кейсы дизайна</span>
             </div>
         </nav>
             <button class="admin-only" onclick="addTab()" style="margin-top:10px; border:1px dashed #ccc; background:none; padding:10px; cursor:pointer; border-radius:10px;">+ Раздел</button>
             <div class="sidebar-bottom">
-                <div class="comment-box"><div class="section-comment" id="desc_box">От свежих идей до готового видео: придумываю, снимаю и монтирую ваш контент</div></div>
+                <div class="comment-box"><div class="section-comment" id="desc_box">Воплощаю в жизнь ваши идеи:от карточек и превью до масштабных афиш и меню</div></div>
             </div>
         </aside>
 
@@ -278,13 +278,15 @@
             <div id="filter_box" class="filter-bar" style="display: flex;">
                 <div class="filter-item active" onclick="setFilter('Все')">Все</div>
             
-                <div class="filter-item " onclick="setFilter('Reels')">Reels</div>
+                <div class="filter-item " onclick="setFilter('Обложки Youtube')">Обложки Youtube</div>
             
-                <div class="filter-item " onclick="setFilter('Горизонтальные')">Горизонтальные</div>
+                <div class="filter-item " onclick="setFilter('Соц. сети')">Соц. сети</div>
             
-                <div class="filter-item " onclick="setFilter('Свадьбы')">Свадьбы</div>
+                <div class="filter-item " onclick="setFilter('Афиши и банеры')">Афиши и банеры</div>
             
-                <div class="filter-item " onclick="setFilter('Статистика')">Статистика</div>
+                <div class="filter-item " onclick="setFilter('Меню и полиграфия')">Меню и полиграфия</div>
+            
+                <div class="filter-item " onclick="setFilter('ИИ дизайны')">ИИ дизайны</div>
             </div>
             <div id="main_view" class="scroll-box"><div class="case-grid">
                 
@@ -292,185 +294,217 @@
                         <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild3532-6436-4236-a535-623631613738/_2312.png">
+    <img src="https://static.tildacdn.com/tild6131-3332-4134-b630-613639656462/1232.png">
 </div>
                         <div class="case-details">Кейсы</div>
                     </div>
                     <div class="case-tile" onclick="openCard(1)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild6134-3431-4062-a339-316137643463/IMG_2261.jpeg">
+    <img src="https://static.tildacdn.com/tild6135-3038-4730-a637-646234373533/_.png">
 </div>
-                        <div class="case-details">Авто Блог - покупка продажа авто</div>
+                        <div class="case-details">Карточки товаров (Автосервис)</div>
                     </div>
                     <div class="case-tile" onclick="openCard(2)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild6235-6164-4130-b834-393961386231/111.png">
+    <img src="https://static.tildacdn.com/tild6430-6561-4964-a166-636461633530/B9DF4447-1C35-4CC2-A.jpeg">
 </div>
-                        <div class="case-details">BackStage: Каспийский Груз - Блог</div>
+                        <div class="case-details">Афиша для Детской Игровой комнаты </div>
                     </div>
                     <div class="case-tile" onclick="openCard(3)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild3830-3664-4134-a433-623066366233/17530C1F-1B81-45D7-9.jpeg">
+    <img src="https://static.tildacdn.com/tild6363-3332-4662-a630-633030386339/7F67D188-9E04-4383-8.png">
 </div>
-                        <div class="case-details">Кавер перевод на более чем 400 тыс просмотров</div>
+                        <div class="case-details">Меню для Паба</div>
                     </div>
                     <div class="case-tile" onclick="openCard(4)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-32.userapi.com/s/v1/ig2/hjdo1-cH2ixidHEEBV4aNimlwBOgFcXO8EmU_MjDXwkigZYfqERqpCDteoj-uu56Ih15Qsz6uUbKfgWbSQ1V4MPC.jpg?quality=95&amp;as=32x57,48x85,72x128,108x192,160x284,240x426,280x497&amp;from=bu&amp;u=MUxTxjcs6EHOVAzGTBDmnZR3OXoflZKShhLNot7uteA&amp;cs=280x0">
+    <img src="https://static.tildacdn.com/tild3030-3764-4666-b734-633139313861/4BF5D364-0E83-4279-8.png">
 </div>
-                        <div class="case-details">Я охочусь на ЛИС! (Сьемка + Монтаж)</div>
+                        <div class="case-details">Прайс лист для Детской Игровой комнаты</div>
                     </div>
                     <div class="case-tile" onclick="openCard(5)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-10.userapi.com/s/v1/ig2/eWTVaPqtW9GSr6PyHYwrO1huWa_Ip6gEXQ4nsx2rBKERM6-tlkyGbn9sGdRIjEQUnXvsDaX4HvlPbuHDF0fYQKbK.jpg?quality=95&amp;as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280&amp;from=bu&amp;u=xXv9JbapntuNQYk81BdxP8-wxbaHbsKAgqGiU9VvZD0&amp;cs=720x0">
+    <img src="https://static.tildacdn.com/tild3463-3032-4630-b734-393539353663/D3B95234-E887-4F23-B.jpeg">
 </div>
-                        <div class="case-details">Детская игровая комната (мини обзор)</div>
+                        <div class="case-details">Пицца для StreeFood -  Экран телевизора</div>
                     </div>
                     <div class="case-tile" onclick="openCard(6)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-5.userapi.com/s/v1/ig2/NFi8Jx0FgrmxiYb-kKz347CwPxuP_DcU0F2w4zGnU2NYwh8TCAvYSjHjqSJ3kLa58R4R_YmPOigZvhkNo-wqFZrk.jpg?quality=95&amp;as=32x44,48x66,72x100,108x150,160x222,240x332,360x499,431x597&amp;from=bu&amp;u=fpegA7UQHB5uUPrQ1Q3lXds_1HgIl7iEa8uSULEXU28&amp;cs=431x0">
+    <img src="https://sun9-39.userapi.com/s/v1/ig2/alACTH59x2uXU1u0JcYt8BYzrRdWszL1M-g8eBrJWV1BpFdl507xm_NxZcvHeCvVwWKNYo_CEtQ9YUyuritkFet-.jpg?quality=95&amp;as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080&amp;from=bu&amp;u=OXB_EkZ2JWDBvC_Qbz0tyih0UNvY3JjCRe5iPbiYSeM&amp;cs=1080x0">
 </div>
-                        <div class="case-details">Ролик для таргета (Авто тематика) </div>
+                        <div class="case-details">Афиши для постов </div>
                     </div>
                     <div class="case-tile" onclick="openCard(7)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-60.userapi.com/s/v1/ig2/tnKYjhRJnQYmY15Nzj6290fxAEVQoTE1c6eYc1gIUFpEvxFcI-rPfM9lO11XNWfAPyZUTTb8Ig_5lq1LTz_NbDUR.jpg?quality=95&amp;as=32x55,48x82,72x123,108x185,160x274,240x412,312x535&amp;from=bu&amp;u=weneMmgQc5Js2pRBGLgaEzKRpSPI3KEkWvPzrnXOH84&amp;cs=312x0">
+    <img src="https://sun9-58.userapi.com/s/v1/ig2/lXE6lzaudSst88LvX8PhPpwSvw-SNsyfZtKafl9TqCFdyjxgPOeCemDk9Y8HmIm88rpiLKFpPaNJz8W6Irquz0Z5.jpg?quality=95&amp;as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1000x1000&amp;from=bu&amp;u=1pCGW-UNK3ITv2JBZL4yuYrN00fGQx-jbzCCdjzmw5g&amp;cs=1000x0">
 </div>
-                        <div class="case-details">Кинимотографичный reels  18+</div>
+                        <div class="case-details">Карточка услуг для ВК </div>
                     </div>
                     <div class="case-tile" onclick="openCard(8)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-71.userapi.com/s/v1/ig2/S0fQjL6bWQu69wWac_Gr1Y9Mi2Fhf0ZPqfLlAX1yBJfAO0MkWWRZYYqhWGW3KJbzgtNeUGEL3KZelFzRi5vJRmPR.jpg?quality=95&amp;as=32x42,48x63,72x94,108x141,160x210,240x314,316x414&amp;from=bu&amp;u=cMBNK4uG8d672e11ttS624FYr7f9_QTHcWZZWZZ9X9k&amp;cs=316x0">
+    <img src="https://sun9-13.userapi.com/s/v1/ig2/gKn4mFnq578yoTdFRs_ex_9-YZ4rt0oIPaVf4Cp1lWeiMPqdhzFxLbBoTCuDIPh1gJOkpy7xgs5fxfRn5UpiARRm.jpg?quality=95&amp;as=32x35,48x53,72x80,108x119,160x177,240x265,360x398,457x505&amp;from=bu&amp;u=EQiEbuY5n6My-otN_uib3_lFj800sC3N6NRDhtzpYPE&amp;cs=457x0">
 </div>
-                        <div class="case-details">Юмор с костюмами </div>
+                        <div class="case-details">Оформление соц сетей #Мотоимото (Прокат Экстрим техники)</div>
                     </div>
                     <div class="case-tile" onclick="openCard(9)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-54.userapi.com/s/v1/ig2/ILQrUbIiOfMN2B63XDkPdaibv_K8fJajn3iU4SM9Wm_TghculNxfPUEhhqe1_cnnQllCMmGfXzJ3AI4mLUK6v-_K.jpg?quality=95&amp;as=32x56,48x84,72x125,108x188,160x278,240x418,304x529&amp;from=bu&amp;u=MJdY5a3sKGX_CnuQqFcpJbGjptjh702uCPptRmEeurY&amp;cs=304x0">
+    <img src="https://sun9-58.userapi.com/s/v1/ig2/p_F7U-JpGOMZHmpd1dk3lVgIl2LN6iotqh8-M38vTGbfue-lW7WKVpZ41zaRV94wYk2Zdtjm-2NDE6fDXaNHPBbm.jpg?quality=95&amp;as=32x36,48x54,72x80,108x121,160x179,240x268,360x402,457x510&amp;from=bu&amp;cs=457x0">
 </div>
-                        <div class="case-details">Сколько стоит одежда? </div>
+                        <div class="case-details">Оформление соц сетей КатюшаТУР</div>
                     </div>
                     <div class="case-tile" onclick="openCard(10)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-19.userapi.com/s/v1/ig2/LGtkAjVbj9Fru9V17pKLLAEeEK1aHyyW_fAb9y0qXgNkP_hIxtnZb4dIPoKJOQey_YPStlp3wsaKC9gVv-Zo7YoR.jpg?quality=95&amp;as=32x43,48x65,72x97,108x145,160x215,240x323,311x418&amp;from=bu&amp;u=LxF-PR_fjfofRdMllr_MPOvDQffPp4ayCkVhtvCjsnc&amp;cs=311x0">
+    <img src="https://sun9-2.userapi.com/s/v1/ig2/Oltb2wG4Yg3Erk2Vn9ZuLhw09eiT-Vb9C8yixKN-9hVkBbfqtGY1dTN1cdIPAPumocOhNh7iNfuH2_aRpmuvbF8V.jpg?quality=95&amp;as=32x33,48x49,72x74,108x111,160x164,240x246,360x369,457x469&amp;from=bu&amp;cs=457x0">
 </div>
-                        <div class="case-details">Бэтмен +18</div>
+                        <div class="case-details">Оформление соц сетей Клуб О'Лень</div>
                     </div>
                     <div class="case-tile" onclick="openCard(11)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-36.userapi.com/s/v1/ig2/VVuT4zpgrUrQhEBoEB2P8lYYSk4k_-zHvgZkGLUxS25c8l7POyeMne5amQy_-qlGX1_i4nKIGE75E6yJnhzX0TQB.jpg?quality=95&amp;as=32x55,48x82,72x123,108x184,160x273,240x410,315x538&amp;from=bu&amp;u=AFwhPYWn4nFM2nbbC8yEz7dEGResO62Yuna8c7JuXzw&amp;cs=315x0">
+    <img src="https://sun9-50.userapi.com/s/v1/ig2/L4sr1a3vgRNaIkWwRRAyK_fDaY8xmyJEOfHx_dSB7kn2oy1FF9ol-PHUjhycX3izJEWZUbwn1Efe1ce1Y89jZ27R.jpg?quality=95&amp;as=32x27,48x40,72x60,108x90,160x134,240x200,360x301,480x401,540x451,606x506&amp;from=bu&amp;cs=606x0">
 </div>
-                        <div class="case-details">Как я купил самую Дешевую BMW? </div>
+                        <div class="case-details">Оформление соц сетей Автоподбор</div>
                     </div>
                     <div class="case-tile" onclick="openCard(12)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-17.userapi.com/s/v1/ig2/S8oWVw2GcekM8jlbQ1Rycm8knZ7n-KxVtu8DS0w0VybOn2j0TMBvBPe6vC9ypC_Isb6VZ8tz8Lck311P-2E2UCxd.jpg?quality=95&amp;as=32x28,48x42,72x64,108x96,160x142,240x212,360x319,374x331&amp;from=bu&amp;u=nqxtIhmpS_DGqHWbuuS1Ofpw-zU18Lr3lzr5Mip9s_g&amp;cs=374x0">
+    <img src="https://sun9-28.userapi.com/s/v1/ig2/bKJg1kEAI5l7yIK6Rh5xQnPnIl1BO-8RdXowYDKhbtDYRCS_P-dbau6Jvob5gUaxf65-OXnfk3XM-ZzLubDuIXHz.jpg?quality=95&amp;as=32x29,48x43,72x65,108x97,160x144,240x216,360x324,480x432,540x486,640x576,720x648,1000x900&amp;from=bu&amp;u=jGEitfliXYaj5K9zMFagi5cFx80iSQ6jfHTgvfDYzxI&amp;cs=1000x0">
 </div>
-                        <div class="case-details">Простенький Reels Общепит/Детская игровая комнтаа</div>
+                        <div class="case-details">Карточка услуг (Автосервис)</div>
                     </div>
                     <div class="case-tile" onclick="openCard(13)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-56.userapi.com/s/v1/ig2/KPJD4qUOmzF8igRwTnEM0Ms_3YZRfRjuxUpFo8XadzGAjhF-4OWqQ5ZvY-r3JXvtLUHo_cOr6dS8feK6tyE7cixP.jpg?quality=95&amp;as=32x53,48x79,72x119,108x179,160x265,240x397,360x596,426x705&amp;from=bu&amp;u=b9B3j0_xCHAGuDJGS3dEz7rgRwmsK8Ggn4rSHM5BQKI&amp;cs=426x0">
+    <img src="https://sun9-79.userapi.com/s/v1/ig2/ElFZeTSMGk1ESEC8hH1MqhvBZ8mL3EomJDrvHzCF7FHb-Lt33vIeA5-5bq9M05KiHiFhPp_4Lb6wZUT3dBjWQ5rx.jpg?quality=95&amp;as=32x45,48x68,72x102,108x153,160x226,240x339,360x509,480x679,540x764,640x905,720x1018,1080x1528,1280x1810,1440x2037,1810x2560&amp;from=bu&amp;cs=1280x0">
 </div>
-                        <div class="case-details">Видео Афиша Стаф пати (VPN)</div>
+                        <div class="case-details">Бланк для Автосервис (частично ИИ)</div>
                     </div>
                     <div class="case-tile" onclick="openCard(14)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-27.vkuserphoto.ru/s/v1/ig2/2us6Q8Dkfci0VoeW-EzvQw-GF6ydJl2oG6wUNCFsTHlKZITU1HZaqB944nmzWl0HIIAFmw69sGJZhYr70Dwz5oDZ.jpg?quality=95&amp;as=32x53,48x79,72x119,108x179,160x265,240x397,360x596,431x713&amp;from=bu&amp;u=kXdjkezYRr3Unozi1UN88U8FApvhSvH2yarETAkYJbQ&amp;cs=431x0">
+    <img src="https://sun9-78.userapi.com/s/v1/ig2/AgtuF_xHeEKrpm2f5frtVjcdib9qMefECuzqyndL4hMr_-lEsor83DjrmxfKY2vHR1We3ljTnvgdH9MzLFVTJPF1.jpg?quality=95&amp;as=32x17,48x26,72x39,108x59,160x87,240x131,360x196,480x262,540x295,640x349,720x393,1080x589,1280x698,1408x768&amp;from=bu&amp;cs=1280x0">
 </div>
-                        <div class="case-details">Трендовое Свадебное Видео на 300 тысяч просмотров</div>
+                        <div class="case-details">Изображение для финансового телеграм канала (ИИ)</div>
                     </div>
                     <div class="case-tile" onclick="openCard(15)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-86.vkuserphoto.ru/s/v1/ig2/yt0iNFahqTrW6WAueulsuRCIuY2rbLjjd7c2WHATadTuNNcBT4LncwOvXafX1vBnqK7wIX2Tp64H7WNgSkXCM-Jf.jpg?quality=95&amp;as=32x16,48x24,72x36,108x54,160x80,240x120,360x180,480x239,540x269,640x319,720x359,1080x539,1280x639,1351x674&amp;from=bu&amp;u=6RuCxlspflA9_W-CF88nEYT8hw6hoSOoCFe4ZVgTNSc&amp;cs=1280x0">
+    <img src="https://sun9-86.userapi.com/s/v1/ig2/5T69HhzNplEnX6aydAqIWYYNMHnccoHC7zXUBBmPEKXLVp6clZtz69MBaZXqQY5xuWHJ9JZ_1BhqfoUQ45Z3tQLI.jpg?quality=95&amp;as=32x18,48x27,72x41,108x61,160x90,240x135,360x203,480x271,540x305,640x361,720x406,1080x609,1280x722,1285x725&amp;from=bu&amp;cs=1280x0">
 </div>
-                        <div class="case-details">Горизонтальные Свадебное видео для ведущей </div>
+                        <div class="case-details">Превью для Автоканала (Частично ИИ)</div>
                     </div>
                     <div class="case-tile" onclick="openCard(16)">
-                        <div class="type-icon">VIDEO</div>
+                        <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-46.vkuserphoto.ru/s/v1/ig2/M3bRAOg1ycHUoq7GHgYiuNMqIRiESJv94cRj17Qn4Wi_WCwTIe2Rdlw9NGUN9CR0Zmea8RGmeOTIA3_OJEHycDxg.jpg?quality=95&amp;as=32x17,48x25,72x38,108x57,160x84,240x126,360x190,480x253,540x284,640x337,720x379,1080x569,1280x674,1359x716&amp;from=bu&amp;u=VZ79kPEfjBAXRR3HMsXFiffKZYWKmN2007sFvzxJin8&amp;cs=1280x0">
+    <img src="https://sun9-22.userapi.com/s/v1/ig2/lqOiQq4mL-J6VttGGmD5iUFjuqdU-ABlh_H6fyTXu8K1tGbtX7uFgOqA4-wtkeL3WJbmk1Jl6CyAck_O-PJ5mo9x.jpg?quality=95&amp;as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280&amp;from=bu&amp;cs=1280x0">
 </div>
-                        <div class="case-details">Горизонтальное видео свадебное Превью</div>
+                        <div class="case-details">Афиша мероприятия (ПАБ)</div>
                     </div>
                     <div class="case-tile" onclick="openCard(17)">
                         <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild3136-3462-4535-b035-633234646634/123455.png">
+    <img src="https://sun9-30.userapi.com/s/v1/ig2/7Hoszdx1_5V62qtBJJV7Mz69y7nth3eQlzqDfSAp0jjheR-v02rRLRkyzUEdFm_shGVC8IW_nb0LQuuDNGNCiG02.jpg?quality=95&amp;as=32x45,48x68,72x102,108x153,160x227,240x340,360x510,480x680,540x765,640x906,720x1019,904x1280&amp;from=bu&amp;u=fX-0BGTncFUXvPq1RV61sKaJG5ppToNV5Xps11EXASA&amp;cs=904x0">
 </div>
-                        <div class="case-details">Статистика Автопдобор</div>
+                        <div class="case-details">Афиша Шаурма </div>
                     </div>
                     <div class="case-tile" onclick="openCard(18)">
                         <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild6563-3935-4162-a465-363736626235/IMG_2265.jpeg">
+    <img src="https://sun9-3.userapi.com/s/v1/ig2/_jDj97qygow32jmIymL66i-fxFwOR9PEg4uvNsaHdXRe5w7pLbSapsK1hnmlZ0z5ljl14foKetA3EJEWZU7iiG0d.jpg?quality=95&amp;as=32x45,48x68,72x102,108x153,160x227,240x340,360x511,480x681,540x766,640x908,720x1021,1080x1532,1280x1816,1410x2000&amp;from=bu&amp;cs=1280x0">
 </div>
-                        <div class="case-details">Большие просмотры </div>
+                        <div class="case-details">Афиша акция Коктейль </div>
                     </div>
                     <div class="case-tile" onclick="openCard(19)">
                         <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild6235-3964-4537-b733-346361616165/IMG_2267.jpeg">
+    <img src="https://sun9-44.userapi.com/s/v1/ig2/vER12Mf6MUaFQ88SXTcJNwRwf6ox595sAwc3ekhNtccfmkYg2fJVNnRIwXEkPzvMZbYUrhlyVmgm1PgOZMI7jC5x.jpg?quality=95&amp;as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920&amp;from=bu&amp;cs=1080x0">
 </div>
-                        <div class="case-details">Статистика Мотоимото</div>
+                        <div class="case-details">Прайс лист Шиномонтаж </div>
                     </div>
                     <div class="case-tile" onclick="openCard(20)">
                         <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://static.tildacdn.com/tild3166-3464-4134-a534-316566363838/12345.png">
+    <img src="https://sun9-55.userapi.com/s/v1/ig2/yRSsnCRqMofPEXbn8BJy6FvUUmuH2qjvZUZCt-npQ6zLi-31rVHdiRAuMnd6l5X9oBQxY1jo1EE2X2eUoQFbUHZ3.jpg?quality=95&amp;as=32x15,48x22,72x33,108x50,160x74,240x110,360x166,480x221,540x248,640x294,720x331,1080x497,1280x589,1440x663,2560x1178&amp;from=bu&amp;cs=1280x0">
 </div>
-                        <div class="case-details">Стабильные результаты даже без долгой активности</div>
+                        <div class="case-details">Визитка Шиномонтаж </div>
                     </div>
                     <div class="case-tile" onclick="openCard(21)">
                         <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-35.vkuserphoto.ru/s/v1/ig2/VzH_KTdKvhjAFntYPAQHgya02Aug_mZvljgXLg3YQBsezGwgiGMerGiHr-Cg0Y9PeC6RuB-865H9nVNClV4HnJVu.jpg?quality=95&amp;as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080&amp;from=bu&amp;u=Fg0dWJ4gLndIEaokz0feANrdHy7A4F-MuLwD6Ghs9Kw&amp;cs=1080x0">
+    <img src="https://sun9-28.userapi.com/s/v1/ig2/-T2DDGexzP-kD-MKjI64-ZaVhoFiy5yomnNnJeSLKS9r5DaGxwp91CTfeFz_lrQDT6ZwqcSY5PLMhDpDvB_hXl92.jpg?quality=95&amp;as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720,1440x810,1920x1080&amp;from=bu&amp;cs=1280x0">
 </div>
-                        <div class="case-details">ДО/ПОСЛЕ #Мотоимото инст</div>
+                        <div class="case-details">Превью оздоровительный канал </div>
                     </div>
                     <div class="case-tile" onclick="openCard(22)">
                         <div class="type-icon">IMAGE</div>
                         
                         <div class="case-preview">
-    <img src="https://sun9-38.vkuserphoto.ru/s/v1/ig2/mxgS6BY_UwBWxfG0oklHtJ_c23A1Q6pKXd0lIrFvvvjUDvTLvCUbo11U4_DMnkOl_y5OgYbk0DOA1FVbLfvYTLvL.jpg?quality=95&amp;as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080&amp;from=bu&amp;cs=1080x0">
+    <img src="https://sun9-82.vkuserphoto.ru/s/v1/ig2/V37aUQzoOfx6xrM7Lp4wWYPCW_LNL6VMcOtbMkiCj4ks3YVwBGVLfm4p02X3gMB31TeRq8bNG6IC7NaT5pHtxFBz.jpg?quality=95&amp;as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720&amp;from=bu&amp;u=H31qb0GQTlr-8XUSe5fCmsMXagJoVPuuD9qCraaymk8&amp;cs=1280x0">
 </div>
-                        <div class="case-details">ДО/ПОСЛЕ #Мотоимото Youtube</div>
+                        <div class="case-details">Интервью Автоподбор</div>
+                    </div>
+                    <div class="case-tile" onclick="openCard(23)">
+                        <div class="type-icon">IMAGE</div>
+                        
+                        <div class="case-preview">
+    <img src="https://sun9-4.vkuserphoto.ru/s/v1/ig2/wJ_DWX2bDc_FvJaD06RMgv0cLCkqr1nM0ahLoK2febsGbxgwkSBTc87m-nsUakbPMloB_FT_UTr_zbFFuHmYTaPM.jpg?quality=95&amp;as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720&amp;from=bu&amp;cs=1280x0">
+</div>
+                        <div class="case-details">Превью Автоподбор</div>
+                    </div>
+                    <div class="case-tile" onclick="openCard(24)">
+                        <div class="type-icon">IMAGE</div>
+                        
+                        <div class="case-preview">
+    <img src="https://sun9-87.vkuserphoto.ru/s/v1/ig2/BdsPlzmtI-w-q1zc3-oCYpRxt-Ypr4w2lntSOhxiH1MTR1dHaWGB_E5eff1hLgp5NFt7lao-zOB6GYk9iafh9NUM.jpg?quality=95&amp;as=32x19,48x29,72x43,108x65,160x97,240x145,360x217,480x290,540x326,640x386,720x435,1080x652&amp;from=bu&amp;u=HW-D7DNUJYWOpaFUFrjb9cVRxyFIhXnFgDIRrx5ykz8&amp;cs=1080x0">
+</div>
+                        <div class="case-details">Превью Сьемки КАСПИЙСКИЙ ГРУЗ</div>
+                    </div>
+                    <div class="case-tile" onclick="openCard(25)">
+                        <div class="type-icon">IMAGE</div>
+                        
+                        <div class="case-preview">
+    <img src="https://sun3-11.vkuserphoto.ru/s/v1/ig2/hGf0Bdi-LqP20cE1AkUkEiSgOZg4jM0wmSMuPi5wao0de4dqJTX7M0CbRou9East8wDvWt_Ois0299sStF5aiWT8.jpg?quality=95&amp;as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720&amp;from=bu&amp;cs=1280x0">
+</div>
+                        <div class="case-details">Превью для Cover Перевода</div>
+                    </div>
+                    <div class="case-tile" onclick="openCard(26)">
+                        <div class="type-icon">IMAGE</div>
+                        
+                        <div class="case-preview">
+    <img src="https://i9.ytimg.com/vi_webp/nQoGXrlGhn8/maxresdefault.webp?v=5d0fbfad&amp;sqp=CLzxiNQG&amp;rs=AOn4CLDVsZe8pUEyQPIvCKHiZltDKSKRJw">
+</div>
+                        <div class="case-details">Превью для Cover Перевода #2</div>
                     </div>
                 
             </div></div>
@@ -1022,6 +1056,41 @@
                 "cat": "Обложки Youtube",
                 "n": "",
                 "i": "https://sun9-28.userapi.com/s/v1/ig2/-T2DDGexzP-kD-MKjI64-ZaVhoFiy5yomnNnJeSLKS9r5DaGxwp91CTfeFz_lrQDT6ZwqcSY5PLMhDpDvB_hXl92.jpg?quality=95&as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720,1440x810,1920x1080&from=bu&cs=1280x0"
+            },
+            {
+                "t": "Интервью Автоподбор",
+                "type": "img",
+                "cat": "Обложки Youtube",
+                "n": "",
+                "i": "https://sun9-82.vkuserphoto.ru/s/v1/ig2/V37aUQzoOfx6xrM7Lp4wWYPCW_LNL6VMcOtbMkiCj4ks3YVwBGVLfm4p02X3gMB31TeRq8bNG6IC7NaT5pHtxFBz.jpg?quality=95&as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720&from=bu&u=H31qb0GQTlr-8XUSe5fCmsMXagJoVPuuD9qCraaymk8&cs=1280x0"
+            },
+            {
+                "t": "Превью Автоподбор",
+                "type": "img",
+                "cat": "Обложки Youtube",
+                "n": "",
+                "i": "https://sun9-4.vkuserphoto.ru/s/v1/ig2/wJ_DWX2bDc_FvJaD06RMgv0cLCkqr1nM0ahLoK2febsGbxgwkSBTc87m-nsUakbPMloB_FT_UTr_zbFFuHmYTaPM.jpg?quality=95&as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720&from=bu&cs=1280x0"
+            },
+            {
+                "t": "Превью Сьемки КАСПИЙСКИЙ ГРУЗ",
+                "type": "img",
+                "cat": "Обложки Youtube",
+                "n": "",
+                "i": "https://sun9-87.vkuserphoto.ru/s/v1/ig2/BdsPlzmtI-w-q1zc3-oCYpRxt-Ypr4w2lntSOhxiH1MTR1dHaWGB_E5eff1hLgp5NFt7lao-zOB6GYk9iafh9NUM.jpg?quality=95&as=32x19,48x29,72x43,108x65,160x97,240x145,360x217,480x290,540x326,640x386,720x435,1080x652&from=bu&u=HW-D7DNUJYWOpaFUFrjb9cVRxyFIhXnFgDIRrx5ykz8&cs=1080x0"
+            },
+            {
+                "t": "Превью для Cover Перевода",
+                "type": "img",
+                "cat": "Обложки Youtube",
+                "n": "",
+                "i": "https://sun3-11.vkuserphoto.ru/s/v1/ig2/hGf0Bdi-LqP20cE1AkUkEiSgOZg4jM0wmSMuPi5wao0de4dqJTX7M0CbRou9East8wDvWt_Ois0299sStF5aiWT8.jpg?quality=95&as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720&from=bu&cs=1280x0"
+            },
+            {
+                "t": "Превью для Cover Перевода #2",
+                "type": "img",
+                "cat": "Обложки Youtube",
+                "n": "",
+                "i": "https://i9.ytimg.com/vi_webp/nQoGXrlGhn8/maxresdefault.webp?v=5d0fbfad&sqp=CLzxiNQG&rs=AOn4CLDVsZe8pUEyQPIvCKHiZltDKSKRJw"
             }
         ]
     }
